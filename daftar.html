@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran KK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            padding-top: 56px; /* Navbar height */
+            background: linear-gradient(135deg, #B3E5FC, #29B6F6);
+        }
+        .navbar-custom {
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: rgba(46, 83, 101, 1); /* Warna background dengan transparansi */
+            backdrop-filter: blur(10px); /* Efek blur */
+        }
+        .navbar-nav .nav-link {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            background-color: #2E5365;
+        }
+        footer p {
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-control, .btn {
+            border-radius: 0.5rem;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-color: #ced4da;
+            box-shadow: none;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .row-syarat {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .syarat-col {
+            flex: 1;
+            min-width: 280px;
+        }
+        .navbar-nav .nav-item .fa-user {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h2 {
+            font-weight: 700;
+            color: #2E5365;
+        }
+        .header p {
+            color: #6c757d;
+            font-size: 1rem;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light  fixed-top navbar-custom">
+        <a class="navbar-brand text-white" href="#">Pendaftaran KK</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="daftar.html">Daftar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="login.php">
+                        Admin
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+   
+    <div class="container mt-5 mb-5">
+        <!-- Form Pendaftaran -->
+        <div class="header">
+            <h2>Form Pendaftaran Kartu Keluarga</h2>
+            <p>Silahkan isi formulir di bawah ini dengan data yang benar.</p>
+        </div>
+        <form action="register.php" method="POST">
+            <div class="mb-3">
+                <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap Anda" required>
+            </div>
+            <div class="mb-3">
+                <label for="nik" class="form-label">NIK</label>
+                <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK Anda" required>
+            </div>
+            <div class="mb-3">
+                <label for="alamat" class="form-label">Alamat</label>
+                <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat lengkap Anda" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
+            </div>
+            <div class="mb-3">
+                <label for="no_hp" class="form-label">No. HP</label>
+                <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Masukkan nomor HP Anda" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Daftar</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Admin Panel. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
